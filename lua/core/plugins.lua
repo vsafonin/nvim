@@ -173,4 +173,8 @@ return require('packer').startup(function(use)
         "smoka7/multicursors.nvim",
         requires = {'smoka7/hydra.nvim',}
     }
+    -- save sessions
+    use {
+        "tpope/vim-obsession"
+    }
 end)
