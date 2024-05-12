@@ -17,15 +17,16 @@ lspconfig.pyright.setup {
         },
     },
 }
-lspconfig.ruff_lsp.setup {
-    init_options = {
-        settings = {
-            -- Any extra CLI arguments for `ruff` go here.
-            args = {},
-        }
-    }
-}
-
+require'lspconfig'.ruff.setup{}
+-- lspconfig.ruff_lsp.setup {
+--     init_options = {
+--         settings = {
+--             -- Any extra CLI arguments for `ruff` go here.
+--             args = {},
+--         }
+--     }
+-- }
+--
 -- lspconfig.pylsp.setup{
 --   settings = {
 --     pylsp = {
