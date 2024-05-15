@@ -1,7 +1,12 @@
 local dap = require("dap")
 local dapui = require("dapui")
 vim.keymap.set('n', '<F9>', function() dap.toggle_breakpoint() end)
-vim.keymap.set('n', '<F5>', function() dap.continue() end)
+vim.keymap.set('n', '<F5>', function()
+    if vim.fn.filereadable(".vscode/launch.json") then
+        require('dap.ext.vscode').load_launchjs(".vscode/launch.json", { debugpy = { 'python' } })
+    end
+    dap.continue()
+end)
 vim.keymap.set('n', '<F17>', function() dap.terminate() end) -- shit + f5
 vim.keymap.set('n', '<F6>', function() dap.pause() end)      -- shit + f5
 vim.keymap.set('n', '<F10>', function() dap.step_over() end)
