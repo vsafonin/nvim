@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 -- NeoTree
-vim.keymap.set('n', '<leader>e', ':Neotree float focus toggle<CR>')
+vim.keymap.set('n', '<leader>e', ':Neotree focus toggle<CR>')
 
 -- реализация копирования в буфер имени файла или пути к нему 
 local copy_path = function(part)

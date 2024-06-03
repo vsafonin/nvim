@@ -50,7 +50,7 @@ return require('packer').startup(function(use)
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
     }
-   -- telescope
+    -- telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
@@ -108,7 +108,7 @@ return require('packer').startup(function(use)
     -- dap
     use 'mfussenegger/nvim-dap'
     use 'mfussenegger/nvim-dap-python'
-    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "rcarriga/cmp-dap" , 'nvim-neotest/nvim-nio'} }
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "rcarriga/cmp-dap", 'nvim-neotest/nvim-nio' } }
     use "folke/neodev.nvim"
 
     -- osc52  буфер обмена
@@ -155,6 +155,7 @@ return require('packer').startup(function(use)
     -- venv selector
     use {
         'linux-cultist/venv-selector.nvim',
+        branch = "regexp",
         requires = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap-python' },
     }
     -- aerail vim
@@ -164,14 +165,10 @@ return require('packer').startup(function(use)
             require("aerial").setup()
         end,
     }
-    -- template
-    use {
-        "glepnir/template.nvim"
-    }
     -- multicursor
     use {
         "smoka7/multicursors.nvim",
-        requires = {'smoka7/hydra.nvim',}
+        requires = { 'smoka7/hydra.nvim', }
     }
     -- save sessions
     use {
@@ -184,4 +181,12 @@ return require('packer').startup(function(use)
             require('nvim_comment').setup()
         end,
     }
+    -- rsync
+    use { 'kenn7/vim-arsync',
+        requires = {
+            { 'prabirshrestha/async.vim' }
+        }
+    }
+    -- skel
+    use "motosir/skel-nvim"
 end)
