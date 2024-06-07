@@ -5,7 +5,8 @@ require('core.colors')
 
 -- Mappings
 require('mappings.base')
-require('mappings.neotree')
+-- require('mappings.neotree')
+require('mappings.oil')
 require('mappings.lsp')
 require('mappings.telescope')
 require('mappings.toggleterm')
@@ -17,7 +18,7 @@ require("mappings.neotest")
 
 -- Plugins
 require('plugins.lsp')
-require('plugins.neotree')
+-- require('plugins.neotree')
 require('plugins.treesitter')
 require('plugins.cmp')
 require('plugins.mason')

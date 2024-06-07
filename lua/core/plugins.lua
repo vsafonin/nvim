@@ -13,6 +13,13 @@ return require('packer').startup(function(use)
             -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         }
     }
+    -- oil
+    use({
+        "stevearc/oil.nvim",
+        config = function()
+            require("oil").setup()
+        end,
+    })
     -- nvim window picker для выбора окна куда открыть файл
     use {
         's1n7ax/nvim-window-picker',
