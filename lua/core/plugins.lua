@@ -3,23 +3,42 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     -- file manager
+    -- use {
+    --     "nvim-neo-tree/neo-tree.nvim",
+    --     branch = "v3.x",
+    --     requires = {
+    --         "nvim-lua/plenary.nvim",
+    --         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    --         "MunifTanjim/nui.nvim",
+    --         -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    --     }
+    -- }
+    -- -- oil
+    -- use({
+    --     "stevearc/oil.nvim",
+    --     config = function()
+    --         require("oil").setup()
+    --     end,
+    -- })
+    -- nvim-tree
     use {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+            'b0o/nvim-tree-preview.lua',
+        },
+    }
+    -- LSP для nvim tree
+    use {
+        "antosha417/nvim-lsp-file-operations",
         requires = {
             "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
-            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-        }
-    }
-    -- oil
-    use({
-        "stevearc/oil.nvim",
+            "nvim-tree/nvim-tree.lua",
+        },
         config = function()
-            require("oil").setup()
+            require("lsp-file-operations").setup()
         end,
-    })
+    }
     -- nvim window picker для выбора окна куда открыть файл
     use {
         's1n7ax/nvim-window-picker',
