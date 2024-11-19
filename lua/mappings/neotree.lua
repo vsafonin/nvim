@@ -1,6 +1,8 @@
 
 -- NeoTree
-vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
+vim.keymap.set('n', '<leader>e', ':Neotree float toggle<CR>')
+vim.keymap.set('n', '<leader>b', ':Neotree buffers float toggle<CR>')
+vim.keymap.set('n', '<leader>g', ':Neotree git_status float toggle<CR>')
 
 -- -- реализация копирования в буфер имени файла или пути к нему 
 -- local copy_path = function(part)
