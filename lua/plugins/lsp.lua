@@ -2,6 +2,7 @@ local lspconfig = require('lspconfig')
 lspconfig.ts_ls.setup {}
 lspconfig.ansiblels.setup {}
 lspconfig.bashls.setup {}
+lspconfig.dockerls.setup{}
 -- lspconfig.jedi_language_server.setup{}
 lspconfig.pyright.setup {
     -- Server-specific settings. See `:help lspconfig-setup`
