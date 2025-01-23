@@ -215,4 +215,8 @@ return require('packer').startup(function(use)
     }
     -- skel
     use "motosir/skel-nvim"
+    -- todo/hihglighting
+    use { "folke/todo-comments.nvim",
+            requires = {'nvim-lua/plenary.nvim'}
+    }
 end)

@@ -4,6 +4,6 @@ null_ls.setup({
     sources = {
         null_ls.builtins.formatting.yapf,
         null_ls.builtins.formatting.isort,
-        null_ls.builtins.diagnostics.pylint.with({ prefer_local = ".venv/bin", }),
+        null_ls.builtins.diagnostics.pylint.with({only_local = ".venv/bin",})
     },
 })

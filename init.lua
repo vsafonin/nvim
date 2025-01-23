@@ -20,6 +20,7 @@ require("mappings.neotest")
 -- Plugins
 require('plugins.lsp')
 require('plugins.neotree')
+require('plugins.todo-comments')
 -- require('plugins.nvim-tree')
 require('plugins.nvim-lsp-file')
 require('plugins.treesitter')
