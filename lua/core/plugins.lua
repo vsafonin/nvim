@@ -39,6 +39,9 @@ return require('packer').startup(function(use)
             require("lsp-file-operations").setup()
         end,
     }
+    use {
+      "ray-x/lsp_signature.nvim",
+    }
     -- nvim window picker для выбора окна куда открыть файл
     use {
         's1n7ax/nvim-window-picker',
