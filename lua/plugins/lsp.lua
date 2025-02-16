@@ -6,6 +6,13 @@ lspconfig.dockerls.setup{}
 -- lspconfig.jedi_language_server.setup{}
 lspconfig.pyright.setup {
     -- Server-specific settings. See `:help lspconfig-setup`
+    capabilities = {
+        workspace = {
+            didChangeWatchedFiles = {
+                dynamicRegistration = true,
+            },
+        },
+    },
     settings = {
         ['pyright'] = {
             disableOrganizeImports = true,
