@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
         end,
     }
     use {
-      "ray-x/lsp_signature.nvim",
+        "ray-x/lsp_signature.nvim",
     }
     -- nvim window picker для выбора окна куда открыть файл
     use {
@@ -220,6 +220,17 @@ return require('packer').startup(function(use)
     use "motosir/skel-nvim"
     -- todo/hihglighting
     use { "folke/todo-comments.nvim",
-            requires = {'nvim-lua/plenary.nvim'}
+        requires = { 'nvim-lua/plenary.nvim' }
     }
+    --neo-zoom
+    use { "nyngwang/NeoZoom.lua" }
+    -- lazygit
+    -- nvim v0.7.2
+    use({
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    })
 end)

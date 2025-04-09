@@ -2,9 +2,9 @@ local lspconfig = require('lspconfig')
 lspconfig.ts_ls.setup {}
 lspconfig.ansiblels.setup {}
 lspconfig.bashls.setup {}
-lspconfig.dockerls.setup{}
+lspconfig.dockerls.setup {}
 -- lspconfig.jedi_language_server.setup{}
-lspconfig.pyright.setup {
+lspconfig.basedpyright.setup({
     -- Server-specific settings. See `:help lspconfig-setup`
     capabilities = {
         workspace = {
@@ -14,18 +14,12 @@ lspconfig.pyright.setup {
         },
     },
     settings = {
-        ['pyright'] = {
-            disableOrganizeImports = true,
-        },
-        python = {
-            analysis = {
-                -- Ignore all files for analysis to exclusively use Ruff for linting
-                ignore = { '*' },
-            },
+        basedpyright = {
+            typeCheckingMode = "standard",
         },
     },
-}
-require'lspconfig'.ruff.setup{}
+})
+require 'lspconfig'.ruff.setup {}
 -- lspconfig.ruff_lsp.setup {
 --     init_options = {
 --         settings = {
