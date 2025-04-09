@@ -1,8 +1,8 @@
 local lspconfig = require('lspconfig')
-lspconfig.ts_ls.setup {}
-lspconfig.ansiblels.setup {}
-lspconfig.bashls.setup {}
-lspconfig.dockerls.setup {}
+lspconfig.ts_ls.setup({})
+lspconfig.ansiblels.setup({})
+lspconfig.bashls.setup({})
+lspconfig.dockerls.setup({})
 -- lspconfig.jedi_language_server.setup{}
 lspconfig.basedpyright.setup({
     -- Server-specific settings. See `:help lspconfig-setup`
@@ -19,7 +19,7 @@ lspconfig.basedpyright.setup({
         },
     },
 })
-require 'lspconfig'.ruff.setup {}
+require 'lspconfig'.ruff.setup({})
 -- lspconfig.ruff_lsp.setup {
 --     init_options = {
 --         settings = {
@@ -48,7 +48,7 @@ require 'lspconfig'.ruff.setup {}
 --     }
 --   }
 -- }
-require 'lspconfig'.lua_ls.setup {
+require 'lspconfig'.lua_ls.setup({
     on_init = function(client)
         local path = client.workspace_folders[1].name
         if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
@@ -78,3 +78,4 @@ require 'lspconfig'.lua_ls.setup {
         return true
     end
 }
+)
