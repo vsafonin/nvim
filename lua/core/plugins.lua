@@ -13,6 +13,8 @@ return require('packer').startup(function(use)
             -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         }
     }
+    -- более умный фолдинг: отключен так как работает плохо, настроил родной в конфиге
+    -- use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
     -- -- oil
     -- use({
     --     "stevearc/oil.nvim",

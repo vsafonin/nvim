@@ -1,10 +1,11 @@
-local lspconfig = require('lspconfig')
-lspconfig.ts_ls.setup({})
-lspconfig.ansiblels.setup({})
-lspconfig.bashls.setup({})
-lspconfig.dockerls.setup({})
+-- local lspconfig = require('lspconfig')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('ansiblels')
+vim.lsp.enable('bashls')
+vim.lsp.enable('dockerls')
 -- lspconfig.jedi_language_server.setup{}
-lspconfig.basedpyright.setup({
+vim.lsp.enable('basedpyright')
+vim.lsp.config('basedpyright', {
     -- Server-specific settings. See `:help lspconfig-setup`
     capabilities = {
         workspace = {
@@ -19,36 +20,17 @@ lspconfig.basedpyright.setup({
         },
     },
 })
-require 'lspconfig'.ruff.setup({})
--- lspconfig.ruff_lsp.setup {
---     init_options = {
---         settings = {
---             -- Any extra CLI arguments for `ruff` go here.
---             args = {},
---         }
---     }
--- }
---
--- lspconfig.pylsp.setup{
---   settings = {
---     pylsp = {
---       plugins = {
---         pycodestyle = {
---           ignore = {'W391'},
---           maxLineLength = 100
---         },
---         rope_autoimport = {
---             enabled = true,
---             memory = true
---         },
---         jedi_completion = {
---             fuzzy = true
---         },
---       }
---     }
---   }
--- }
-require 'lspconfig'.lua_ls.setup({
+vim.lsp.enable('ruff')
+vim.lsp.enable('docker_compose_language_service')
+-- file format автоматически
+vim.filetype.add({
+    pattern = {
+        ["compose.*%.ya?ml"] = "yaml.docker-compose",
+        ["docker%-compose.*%.ya?ml"] = "yaml.docker-compose",
+    },
+})
+-- 
+vim.lsp.config('lspconfig', {
     on_init = function(client)
         local path = client.workspace_folders[1].name
         if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
