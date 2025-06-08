@@ -2,6 +2,16 @@ return require('packer').startup(function(use)
     -- плагины располагать здесь.
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    --AI
+    use {
+        'milanglacier/minuet-ai.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',  -- Required dependency
+            'hrsh7th/nvim-cmp',       -- Optional, if you are using nvim-cmp
+            -- 'Saghen/blink.cmp',       -- Optional, if you are using blink
+        },}
+
+    use { "David-Kunz/gen.nvim" }
     -- file manager
     use {
         "nvim-neo-tree/neo-tree.nvim",

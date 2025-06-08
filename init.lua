@@ -18,6 +18,8 @@ require("mappings.osc52")
 require("mappings.neotest")
 
 -- Plugins
+require('plugins.gen')
+require('plugins.minuet')
 require('plugins.lsp')
 require('plugins.neotree')
 require('plugins.todo-comments')

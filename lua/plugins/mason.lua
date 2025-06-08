@@ -1,4 +1,4 @@
-local ensureinstalled = {'bash-language-server','lua-language-server', 'ruff', 'autopep8', 'isort', 'black', 'debugpy', 'basedpyright', 'ansible-lint', 'ansible-language-server', 'ruff-lsp'}
+local ensureinstalled = {'bash-language-server','lua-language-server', 'ruff', 'autopep8', 'isort', 'black', 'debugpy', 'basedpyright', 'ansible-lint', 'ansible-language-server'}
 require("mason").setup()
 
 -- require("mason-lspconfig").setup {

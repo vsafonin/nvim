@@ -1,4 +1,4 @@
-vim.opt.shell = "/bin/bash"
+vim.opt.shell = "/bin/zsh"
 vim.g.mapleader = " "
 -- 
 -- Mouse
