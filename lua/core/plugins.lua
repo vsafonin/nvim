@@ -10,8 +10,15 @@ return require('packer').startup(function(use)
             'hrsh7th/nvim-cmp',       -- Optional, if you are using nvim-cmp
             -- 'Saghen/blink.cmp',       -- Optional, if you are using blink
         },}
-
+    
+    
     use { "David-Kunz/gen.nvim" }
+    -- gpai
+--     use {
+--     "robitx/gp.nvim",
+-- }
+    -- packer.nvim
+
     -- file manager
     use {
         "nvim-neo-tree/neo-tree.nvim",

@@ -1,5 +1,5 @@
 require('minuet').setup {
-    provider = 'openai_fim_compatible',
+     provider = 'openai_fim_compatible',
     n_completions = 1, -- recommend for local model for resource saving
     -- I recommend beginning with a small context window size and incrementally
     -- expanding it, depending on your local computing power. A context window
@@ -14,14 +14,14 @@ require('minuet').setup {
             api_key = 'TERM',
             name = 'Ollama',
             end_point = 'http://192.168.19.216:11434/v1/completions',
-            -- model = 'qwen2.5-coder:7b',
-            -- model = 'deepseek-coder-v2:16b',
-            model = 'hf.co/ggml-org/Qwen2.5-Coder-7B-Instruct-Q8_0-GGUF:latest',
+            model = 'qwen2.5-coder:7b',
             optional = {
-                max_tokens = 128,
-                  },
+                max_tokens = 56,
+                top_p = 0.9,
+            },
         },
     },
+    
     virtualtext = {
         auto_trigger_ft = {},
         keymap = {
