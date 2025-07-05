@@ -14,7 +14,8 @@ require('minuet').setup {
             api_key = 'TERM',
             name = 'Ollama',
             end_point = 'http://192.168.19.216:11434/v1/completions',
-            model = 'qwen2.5-coder:7b',
+            model = 'deepseek-coder-v2:16b',
+            -- model = 'hf.co/mradermacher/Qwen3-30B-A3B-python-coder-i1-GGUF:Q4_K_M',
             optional = {
                 max_tokens = 56,
                 top_p = 0.9,

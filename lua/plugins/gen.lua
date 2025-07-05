@@ -1,6 +1,7 @@
 require('gen').setup({  
     -- same as above
-    model = "hf.co/XformAI-india/Qwen3-0.6B-coders-gguf:IQ4_XS", -- The default model to use.
+    model = "deepseek-coder-v2:16b", -- The default model to use.
+    -- model = "hf.co/mradermacher/Qwen3-30B-A3B-python-coder-i1-GGUF:IQ3_XXS", -- The default model to use.
     quit_map = "q", -- set keymap to close the response window
     retry_map = "<c-r>", -- set keymap to re-send the current prompt
     accept_map = "<c-cr>", -- set keymap to replace the previous selection with the last result
