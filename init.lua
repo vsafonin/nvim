@@ -18,6 +18,7 @@ require("mappings.osc52")
 require("mappings.neotest")
 
 -- Plugins
+require('plugins.copilot')
 -- require('plugins.gen')
 -- require('plugins.minuet')
 -- require('plugins.gp')
