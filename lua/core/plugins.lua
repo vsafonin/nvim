@@ -6,6 +6,13 @@ return require('packer').startup(function(use)
     --AI
     -- copilot
     use { "zbirenbaum/copilot.lua" } 
+    use {
+          "zbirenbaum/copilot-cmp",
+          after = { "copilot.lua" },
+          config = function ()
+                require("copilot_cmp").setup()
+          end
+        }
     -- use {
     --     'milanglacier/minuet-ai.nvim',
     --     requires = {
