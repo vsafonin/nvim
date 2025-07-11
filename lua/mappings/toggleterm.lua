@@ -1,6 +1,0 @@
--- vim.keymap.set('n', "<leader>t", ":ToggleTerm<CR>")
-vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
-vim.keymap.set('t', '1<Bslash>t', ':ToggleTerm 1 <CR>')
-vim.keymap.set('t', '2<Bslash>t', ':ToggleTerm 2 <CR>')
-vim.keymap.set('t', '3<Bslash>t', ':ToggleTerm 3 <CR>')
-vim.keymap.set('t', '4<Bslash>t', ':ToggleTerm 4 <CR>')

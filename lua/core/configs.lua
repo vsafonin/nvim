@@ -31,20 +31,5 @@ vim.opt.directory = vim.fn.expand("$HOME/.local/share/nvim/swp/") -- keep unsave
 vim.opt.backupdir = vim.fn.expand("$HOME/.local/share/nvim/backup/") -- backups also should not go to git
 
 vim.g.python3_host_prog = vim.fn.expand("$HOME/.local/share/nvim/venv/bin/python3")
-vim.opt.foldmethod = "manual"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldcolumn = "0"
-vim.opt.foldtext = ""
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99
-vim.opt.foldnestmax = 4
--- -- отключение автоматического folding для файла. (не удобно.)
-vim.api.nvim_create_autocmd({"BufEnter"}, {
-    callback = function()
-        vim.cmd "normal zR"
-    end,
-
-})
 vim.opt.colorcolumn = "80"
-
 
