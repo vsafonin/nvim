@@ -1,5 +1,6 @@
 return {
     "zbirenbaum/copilot.lua",
+    lazy = true,
     dependencies = {
          'AndreM222/copilot-lualine'
     },
