@@ -28,7 +28,11 @@ return {
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { preset = 'default' },
+    -- keymap = { preset = 'default', 
+    keymap = { preset = 'default', 
+      -- Manually invoke minuet completion.
+       -- ['<A-y>'] = require('minuet').make_blink_map(),
+    },
 
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -39,7 +43,7 @@ return {
     -- (Default) Only show the documentation popup when manually triggered
     completion = {
         documentation = { auto_show = true },
-        ghost_text = { enabled = true },
+        ghost_text = { enabled = false },
         menu = {
 		    draw = {
 			    columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "source_name" } },
@@ -61,8 +65,19 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lsp', 'copilot', 'path', 'snippets', 'buffer' },
+      -- default = { 'lsp', 'copilot', 'path', 'snippets', 'buffer' },
+      default = { 'lsp', 'path', 'snippets', 'buffer', 'minuet'},
       providers = {
+           minuet = {
+                name = 'minuet',
+                module = 'minuet.blink',
+                async = true,
+                -- Should match minuet.config.request_timeout * 1000,
+                -- since minuet.config.request_timeout is in seconds
+                timeout_ms = 5000,
+                score_offset = 50, -- Gives minuet higher priority among suggestions
+
+            },
         copilot = {
           name = "copilot",
           module = "blink-copilot",
@@ -72,6 +87,8 @@ return {
     },
 
     },
+     -- Recommended to avoid unnecessary request
+    completion = { trigger = { prefetch_on_insert = false } },
     snippets = { preset = "luasnip" },
     
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
