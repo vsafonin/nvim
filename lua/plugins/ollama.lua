@@ -28,7 +28,7 @@ return {
   ---@type Ollama.Config
   opts = {
     -- your configuration overrides
-     model = "deepseek-coder-v2",
+     model = "qwen2.5-coder:7b",
       url = "http://192.168.19.216:11434",
     serve = {
         on_start = false,
@@ -42,7 +42,7 @@ return {
     Sample_Prompt = {
       prompt = "This is a sample prompt that receives $input and $sel(ection), among others.",
       input_label = "> ",
-      model = "deepseek-coder-v2",
+      model = "qwen2.5-coder:7b",
       action = "display",
     }
   }

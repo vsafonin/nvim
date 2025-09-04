@@ -1,5 +1,11 @@
  return {
         'milanglacier/minuet-ai.nvim',
+        keys ={
+            {
+                "<leader>mi", "<cmd>Minuet virtualtext toggle<cr>",
+                desc = "Enable AI complete"
+            }
+        },
         config = function()
             require('minuet').setup {
                 -- Your configuration options here
@@ -37,7 +43,7 @@
                     name = 'Ollama',
                     end_point = 'http://192.168.19.216:11434/v1/completions',
                     -- model = 'qwen2.5-coder:7b',
-                    model = 'deepseek-coder-v2',
+                    model = 'qwen2.5-coder:7b',
                     optional = {
                         max_tokens = 98,
                         top_p = 0.9,
