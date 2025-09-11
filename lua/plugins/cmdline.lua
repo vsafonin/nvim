@@ -3,7 +3,7 @@ return {
   dependencies = { "MunifTanjim/nui.nvim" },
   keys = {
     {
-      "<CR>",
+      ":",
       "<cmd>FineCmdline<CR>",
       mode = "n",
       noremap = true,

@@ -41,7 +41,8 @@
                     -- Consider using APPDATA instead.
                     api_key = 'TERM',
                     name = 'Ollama',
-                    end_point = 'http://192.168.19.216:11434/v1/completions',
+                    -- end_point = 'http://192.168.19.216:11434/v1/completions',
+                    end_point = 'http://localhost:11434/v1/completions',
                     -- model = 'qwen2.5-coder:7b',
                     model = 'qwen2.5-coder:7b',
                     optional = {
