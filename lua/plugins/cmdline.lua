@@ -1,13 +1,13 @@
 return {
      "VonHeikemen/fine-cmdline.nvim",
   dependencies = { "MunifTanjim/nui.nvim" },
-  keys = {
-    {
-      ":",
-      "<cmd>FineCmdline<CR>",
-      mode = "n",
-      noremap = true,
-      desc = "Open FineCmdline",
-    },
-  },
+  -- keys = {
+  --   {
+  --     ":",
+  --     "<cmd>FineCmdline<CR>",
+  --     mode = "n",
+  --     noremap = true,
+  --     desc = "Open FineCmdline",
+  --   },
+  -- },
 }
