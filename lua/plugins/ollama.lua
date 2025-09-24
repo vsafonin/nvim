@@ -28,8 +28,8 @@ return {
   ---@type Ollama.Config
   opts = {
     -- your configuration overrides
-     model = "qwen2.5-coder:7b",
-      url = "http://192.168.19.216:11434",
+     model = "qwen2.5-coder:3b",
+      url = "http://localhost:11434",
     serve = {
         on_start = false,
         command = "ollama",
@@ -42,7 +42,7 @@ return {
     Sample_Prompt = {
       prompt = "This is a sample prompt that receives $input and $sel(ection), among others.",
       input_label = "> ",
-      model = "qwen2.5-coder:7b",
+      model = "qwen2.5-coder:3b",
       action = "display",
     }
   }

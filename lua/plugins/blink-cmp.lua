@@ -1,10 +1,13 @@
 return {
   'saghen/blink.cmp',
   -- optional: provides snippets for the snippet source
-  dependencies = { 'rafamadriz/friendly-snippets' ,
-  {"fang2hou/blink-copilot",
-    config = true
-  }},
+  dependencies = {
+      'rafamadriz/friendly-snippets' ,
+      "milanglacier/minuet-ai.nvim",
+      {"fang2hou/blink-copilot",
+        config = true
+      }
+  },
 
   version = '1.*',
   -- use a release tag to download pre-built binaries
@@ -15,24 +18,12 @@ return {
 
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
-  opts = {
-    -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
-    -- 'super-tab' for mappings similar to vscode (tab to accept)
-    -- 'enter' for enter to accept
-    -- 'none' for no mappings
-    -- All presets have the following mappings:
-    -- C-space: Open menu or open docs if already open
-    -- C-n/C-p or Up/Down: Select next/previous item
-    -- C-e: Hide menu
-    -- C-k: Toggle signature help (if signature.enabled = true)
-    --
-    -- See :h blink-cmp-config-keymap for defining your own keymap
-    -- keymap = { preset = 'default', 
-    keymap = { preset = 'default', 
-      -- Manually invoke minuet completion.
-       -- ['<A-y>'] = require('minuet').make_blink_map(),
-    },
-
+  config = function()
+    local minuet = require('minuet')  -- теперь точно будет найден
+    require('blink-cmp').setup {
+      keymap = {
+        ['<A-y>'] = minuet.make_blink_map(),
+      },
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
       -- Adjusts spacing to ensure icons are aligned
@@ -96,6 +87,8 @@ return {
     --
     -- See the fuzzy documentation for more information
     fuzzy = { implementation = "lua" }
-  },
-  opts_extend = { "sources.default" }
+
+    }
+    end,
+  -- opts_extend = { "sources.default" }
 }
