@@ -9,7 +9,7 @@ return {
      end,
        keys = {
         -- { "<leader>ff", function() require("telescope.builtin").find_files() end, desc = "Find Files" },
-        { "<leader>ff", function() require("telescope.").extensions.frecency.frecency({workspace=CWD}) end, desc = "Find Files" },
+        { "<leader>ff",function() require("telescope").extensions.frecency.frecency({ workspace = "CWD", path_display = { "shorten" }, theme = "ivy", }) end, desc = "Telescope Frecency (CWD)",},
         { "<leader>fw", function() require("telescope.builtin").live_grep() end, desc = "Live Grep" },
         { "<leader>fb", function() require("telescope.builtin").buffers() end, desc = "Find Buffers" },
         { "<leader>fg", function() require("telescope.builtin").grep_string() end, desc = "Grep String Under Cursor" },
